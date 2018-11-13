@@ -1,0 +1,10 @@
+
+Ejercicio 1:
+
+Averigua jerárquicamente, ¿cuál es la relación entre DataInputStream y 
+FileInputStream?
+
+ - 
+
+
+Yeray Notario

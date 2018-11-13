@@ -1,0 +1,13 @@
+
+Ejercicio4:
+
+Vuelve a ejecutar los problemas anteriores pero en los pasos intermedios
+trata de leer el fichero “FicheroDatos.dat” con algún editor de texto del
+sistema. ¿Qué pasa?
+
+ - No nos deja abrir el fichero ya que en ese fichero se guarda en codigo binario(0 y 1)
+   por lo tanto no los interpreta como caracteres y no lo podemos abrir y ver. Si de alguna 
+   manera lo pudiesemos abrir lo unico que veriamos serian simbolos.
+
+
+Yeray Notario
