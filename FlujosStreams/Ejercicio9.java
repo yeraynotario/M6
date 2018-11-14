@@ -1,22 +1,21 @@
 package Practica2;
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-public class Ejercicio8 {
+public class Ejercicio9 {
 	public static void main (String [] args) {
 		try {
 			
-			BufferedWriter fichero = new BufferedWriter (new FileWriter("newtext.txt")); // Atención: utilizamos otro constructor de FileReader. Enestá ocasión no utilizamos un objeto File sino le pasamos el nombre del archivo
+			PrintWriter fichero = new PrintWriter ( new FileWriter ("newtext2.txt"));
 			
 			String fila [] = new String [10];
 			int contador=0;
 			
 			for(int i=0; i<fila.length; i++) {
 				contador++;
-				fichero.write("Esta es la fila "+contador);
-				fichero.newLine();
+				fichero.println("Esta es la fila "+contador);
 			}
 			
 			fichero.close();
@@ -27,4 +26,5 @@ public class Ejercicio8 {
 			System.out.println ("Error de E/S"); 
 		}
 	}
+	
 }
