@@ -10,9 +10,9 @@ public class Ejercicio3 {
 		Scanner lector = new Scanner(System.in);
 		File fichero = new File ("AleatorioEmpleado1.dat");
 		RandomAccessFile file = new RandomAccessFile (fichero , "rw");
-		String apellido[] = {"Fernández", "Gil", "López", "Ramos"," "," "};
-		int dep[] = {10,20,10,10,10,10};
-		Double salario[] = {1000.45,2400.60,3000.0,1500.56,100.0,1000.0};
+		String apellido[] = {"Fernández", "Gil", "López", "Ramos"};
+		int dep[] = {10,20,10,10};
+		Double salario[] = {1000.45,2400.60,3000.0,1500.56};
 		StringBuffer buffer = null; //Buffer para almacenar apellido
 		int n = apellido.length; //Número de elementos en el array
 		int i=0;
@@ -47,8 +47,6 @@ public class Ejercicio3 {
 				System.out.println("Inserta el Apellido:");
 				String ape = lector.next();
 				
-				apellido[i] = ape;
-				
 				buffer = new StringBuffer (ape);
 				buffer.setLength(10); // Fijo en 10 caracteres la longitud del apellido
 			
@@ -57,13 +55,11 @@ public class Ejercicio3 {
 				System.out.println("Inserta el Departamento:");
 				int depar = lector.nextInt();
 				
-				dep[i] = depar;
 				file.writeInt(depar);
 				
 				System.out.println("Inserta el Salario:");
 				Double sal = lector.nextDouble();
 				
-				salario[i] = sal;
 				file.writeDouble (sal);
 				
 			}else {
