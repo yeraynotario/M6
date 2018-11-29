@@ -5,24 +5,21 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Scanner;
 
-public class Ejercicio4 {
+public class Ejercicio5 {
 	public static void main (String [] args) throws IOException {
 		Scanner lector = new Scanner(System.in);
-		File fichero = new File ("AleatorioEmpleado8.dat");
+		File fichero = new File ("AleatorioEmpleado9.dat");
 		RandomAccessFile file = new RandomAccessFile (fichero , "rw");
 		int id, dep ,posicion;
 		Double salario;
 		char apellido[]= new char[10], aux;
-	
+
 		StringBuffer buffer = null; //Buffer para almacenar apellido
 		int n = apellido.length; //Número de elementos en el array
-		int j =0;
 		posicion =0;
-		System.out.println("Inserta el Identificador a modificar:");
+		System.out.println("Inserta el Identificador a borrar:");
 		int iden = lector.nextInt();
 
-		System.out.println("Inserta el importe:");
-		Double impor = lector.nextDouble();
 		for ( ; ; ){
 			file.seek (posicion); // Nos posicionamos en posicion
 			id = file.readInt(); // Obtengo identificar de Empleado
@@ -35,17 +32,27 @@ public class Ejercicio4 {
 			salario = file.readDouble();
 					
 			if (id==iden) {
-				file.seek (posicion+28);
-				Double suma = salario+impor;
-				file.writeDouble (suma);
-				System.out.println("Salario nuevo: "+suma+ " Salario antigo: "+ salario);break;
+				file.seek (posicion);
+				
+				//identi=(id*0)-1;
+				//System.out.println(identi);
+				//file.writeInt(identi);
+				file.writeInt(id);
+				
+				file.seek (posicion+4);
+				buffer = new StringBuffer (String.valueOf(id));
+				buffer.setLength(10); // Fijo en 10 caracteres la longitud del apellido
+				
+				file.writeChars (buffer.toString());
+				file.writeInt(dep*0);
+				file.writeDouble (salario*0);
+				//System.out.println("Salario nuevo: "+suma+ " Salario antigo: "+ salario);
+				break;
 			}
 			posicion = posicion + 36;
 			if (file.getFilePointer() ==file.length()) break; // Si he recorrido todo el fichero, salgo
 		} 
 			file.close(); // No olvidarse de cerrar el fichero
-	}
 
+	}
 }
-	
-	
