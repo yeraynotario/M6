@@ -1,10 +1,19 @@
-
+﻿
 Ejercicio 1:
 
 Averigua jerárquicamente, ¿cuál es la relación entre DataInputStream y 
 FileInputStream?
 
- - 
+ - El FileInputStream es una clase hija que se utiliza para crear una
+   secuencia de entrada utilizada pra leer bytes de un archivo.
+ 
+   El DataInputStream es una clase que es capaz de leer los bytes pero como enteros,
+   float y/o doubles.
+
+   La relacion jerarquica de estas dos clases sería en primer lugar InputStream,
+   en segundo lugar FileInputStream y por ultimo DataInputStream, ya que la primera permite
+   leer bytes, la segunda permite leer bytes de un archivo y la ultima
+   permite leer bytes e interpretarlos como tipos de datos.
 
 
 Yeray Notario
