@@ -29,10 +29,10 @@ public class Ejercicio2 {
 				Element raiz = document.createElement ("empleado");
 				document.getDocumentElement().appendChild(raiz);
 				
-				newElement("Id", data[0], raiz, document);
-				newElement("Apellido", data[1], raiz, document);
-				newElement("Departamento", data[2], raiz, document);
-				newElement("Salario", data[3], raiz, document);	
+				NuevoElement("Id", data[0], raiz, document);
+				NuevoElement("Apellido", data[1], raiz, document);
+				NuevoElement("Departamento", data[2], raiz, document);
+				NuevoElement("Salario", data[3], raiz, document);	
 			}
 
 			Source source = new DOMSource(document);
@@ -45,7 +45,7 @@ public class Ejercicio2 {
 		file.close();		
 	}
 
-	static void newElement(String datoEmpleado, String valor, Element raiz, Document document) {
+	static void NuevoElement(String datoEmpleado, String valor, Element raiz, Document document) {
 		Element elem = document.createElement (datoEmpleado);
 		Text text = document.createTextNode(valor);
 		raiz.appendChild(elem);
