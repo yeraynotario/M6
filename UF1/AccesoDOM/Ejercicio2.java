@@ -24,15 +24,15 @@ public class Ejercicio2 {
 			while ((linea = file.readLine())!=null) { //creamos un bucle que vya guardando en posicion los datos que vaya leyendo del fichero hasta el final del fichero.
 				System.out.println(linea); //pintamos por consola linea a linea lo que hay dentro del fichero txt
 				
-				String[] data = linea.split(":");
+				String[] var = linea.split(":");
 				
-				Element raiz = document.createElement ("empleado");
+				Element raiz = document.createElement ("Empleado");
 				document.getDocumentElement().appendChild(raiz);
 				
-				NuevoElement("Id", data[0], raiz, document);
-				NuevoElement("Apellido", data[1], raiz, document);
-				NuevoElement("Departamento", data[2], raiz, document);
-				NuevoElement("Salario", data[3], raiz, document);	
+				NuevoElement("Id", var[0], raiz, document);
+				NuevoElement("Apellido", var[1], raiz, document);
+				NuevoElement("Departamento", var[2], raiz, document);
+				NuevoElement("Salario", var[3], raiz, document);	
 			}
 
 			Source source = new DOMSource(document);
