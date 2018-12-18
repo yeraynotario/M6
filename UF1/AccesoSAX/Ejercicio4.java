@@ -12,7 +12,7 @@ public class Ejercicio4 {
 	
 	public static void main (String [] args) throws FileNotFoundException, IOException, SAXException {
 
-		System.out.print("Introduce el nombre de una artista: ");
+		System.out.print("Introduce el nombre de un autor: ");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String autor = reader.readLine();
 		
