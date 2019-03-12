@@ -1,0 +1,16 @@
+1. Resuelve las siguientes consultas utilizando el documento EMPLEADOS.xml
+
+
+a. Obtén los nombres de oficio que empiezan por P
+
+
+
+b. Obtén los nombres de oficio y el número de los empleados de cada oficio. Utiliza distinct-values
+
+
+
+
+c. Obtén el número de empleados que tiene cada departamento y la media de salario redondeada
+
+
+

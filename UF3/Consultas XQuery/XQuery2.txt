@@ -1,0 +1,23 @@
+2. Utilizando el documento productos.xml, resuelve con XQuery:
+
+
+a. Obtén por cada zona el número de productos que tiene
+
+
+
+b. Obtén la denominación de los productos entre las etiquetas <zona10></zona10> si son del
+código de zona 10, <zona20></zona20> si son del código de zona 20, etc.
+
+
+
+c. Obtén por cada zona la denominación del o de los productos más caros.
+
+
+
+d. Obtén la denominación de los productos contenida entre las etiquetas <placa></placa> para
+los productos en cuya denominación aparece la palabra Placa Base, <memoria></memoria>,
+para los que contienen la palabra Memoria <micro></micro>, para los que contienen la
+palabra Micro y <otros></otros> para el resto de productos
+
+
+

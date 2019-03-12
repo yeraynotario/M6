@@ -1,0 +1,46 @@
+Ejercicio 9:
+
+a. Devuelve el apellido del penúltimo empleado (NOTA: utilizar last())
+
+	doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[last()-1]/APELLIDO/text()
+
+b. Obtén los elementos del empleado que ocupa la posición 3 (position())
+
+	doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[position() = 3]
+
+c. Cuenta el número de empleados del departamento 10
+
+	doc('db/nueva/empleados.xml')/EMPLEADOS/count(EMP_ROW[DEPT_NO=10])
+
+d. Obtén la suma de SALARIO de los empleados del DEPT_NO =20
+
+	sum(doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[DEPT_NO=20]/SALARIO)
+
+e. Obtén el salario máximo, el mínimo de los empleados con OFICIO=ANALISTA
+
+	max(doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW [not(OFICIO='ANALISTA')]/SALARIO)
+	min(doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW [not(OFICIO='ANALISTA')]/SALARIO)
+
+f. Obtén la media de salario en el DEPT_NO=10
+
+	avg(doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[DEPT_NO=10]/SALARIO)
+
+g. Devuelve la concatenación de apellido, oficio y salario
+
+	doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW/concat(APELLIDO/text(),' ',OFICIO/text(),' ',SALARIO/text())
+
+h. Obtén los elementos de los empleados cuyo apellido empieza por ‘A’
+
+	doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[starts-with(APELLIDO,'A')]
+
+i. Devuelve los oficios que contienen la sílaba ‘OR’
+
+	doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[contains(OFICIO,'OR')]
+
+j. Obtén los datos de los empleados cuyo apellido tiene menos de 4 caracteres
+
+	doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[string-length(APELLIDO)<4]
+
+
+
+
