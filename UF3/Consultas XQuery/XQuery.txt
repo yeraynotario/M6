@@ -3,14 +3,18 @@
 
 a. Obtén los nombres de oficio que empiezan por P
 
-
+	for $emple in doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[starts-with(OFICIO, "P")]
+	return $emple
 
 b. Obtén los nombres de oficio y el número de los empleados de cada oficio. Utiliza distinct-values
 
-
-
+	for $oficio in doc('db/nueva/empleados.xml')/EMPLEADOS/distinct-values(EMP_ROW/OFICIO)
+	let $emple:=doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[OFICIO=$oficio]
+	return concat($oficio, ' = ',count ($emple))
 
 c. Obtén el número de empleados que tiene cada departamento y la media de salario redondeada
 
-
-
+	for $dept in doc('db/nueva/empleados.xml')/EMPLEADOS/distinct-values(EMP_ROW/DEPT_NO)
+	let $emple:=doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[DEPT_NO=$dept]
+	let $salario:=doc('db/nueva/empleados.xml')/EMPLEADOS/EMP_ROW[DEPT_NO=$dept]/SALARIO
+	return concat($dept, ' = ',count ($emple),' Salario: ',avg($salario))
