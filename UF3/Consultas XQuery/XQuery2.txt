@@ -3,16 +3,25 @@
 
 a. Obtén por cada zona el número de productos que tiene
 
-
+	for $zona in doc('db/nueva/productos.xml')/productos/distinct-values(produc/cod_zona)
+	let $prod:=doc('db/nueva/productos.xml')/productos/produc[cod_zona=$zona]
+	return concat($zona, ' = ',count ($prod))
 
 b. Obtén la denominación de los productos entre las etiquetas <zona10></zona10> si son del
 código de zona 10, <zona20></zona20> si son del código de zona 20, etc.
 
+	for $zona in doc('db/nueva/productos.xml')/productos/produc/cod_zona
+	for $denom in doc('db/nueva/productos.xml')/productos/produc[cod_zona=$zona]/denominacion
+	return concat('<zona',$zona,'>',$denom,'<zona',$zona,'>')
 
 
 c. Obtén por cada zona la denominación del o de los productos más caros.
 
-
+	for $zona in doc('db/nueva/productos.xml')/productos/distinct-values(produc/cod_zona)
+	let $prod:=doc('db/nueva/productos.xml')/productos/produc[cod_zona=$zona]
+	let $max:=max($prod/precio)
+	let $denom:=$prod[precio=$max]/denominacion
+	return concat($zona,' = ',$denom)
 
 d. Obtén la denominación de los productos contenida entre las etiquetas <placa></placa> para
 los productos en cuya denominación aparece la palabra Placa Base, <memoria></memoria>,
