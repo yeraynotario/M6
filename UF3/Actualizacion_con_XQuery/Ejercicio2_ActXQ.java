@@ -17,7 +17,7 @@ public class Ejercicio2_ActXQ {
 
 			//consulta = conn.createExpression();
 			XQExpression consulta = conn.createExpression();
-			String actual = ("update insert " + "DEP_ROW, DEPT_NO='50',DNOMBRE='INFORMÁTICA',LOC='Valencia'"+"into /departamentos");
+			String actual = ("update insert" + "<DEP_ROW><DEPT_NO>50</DEPT_NO><DNOMBRE>INFORMÁTICA</DNOMBRE><LOC>Valencia</LOC></DEP_ROW>"+"into /departamentos");
 		    //consulta.executeCommand("removeDocument($docId)");
 			
 			
